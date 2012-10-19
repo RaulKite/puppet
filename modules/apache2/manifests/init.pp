@@ -15,7 +15,7 @@ class apache2 {
 			source => "puppet:///modules/apache2/apache2.conf",
 			mode => 644,
 			owner => root,
-			group => root
+			group => root;
     "/etc/apache2/sites-enabled/tika.conf":
       source => "puppet:///modules/apache2/tika.conf",
       owner => root,
