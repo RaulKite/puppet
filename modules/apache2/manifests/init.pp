@@ -10,12 +10,12 @@ class apache2 {
 			enable => true
 	}
 
-#	file {
-#		"/etc/apache2/apache2.conf":
-#			source => "puppet:///modules/apache2/apache2.conf",
-#			mode => 644,
-#			owner => root,
-#			group => root
-#	}
+	file {
+		"/etc/apache2/apache2.conf":
+			source => "puppet:///modules/apache2/apache2.conf",
+			mode => 644,
+			owner => root,
+			group => root
+	}
 }
 
