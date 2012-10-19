@@ -16,6 +16,12 @@ class apache2 {
 			mode => 644,
 			owner => root,
 			group => root
+    "/etc/apache2/sites-enabled/tika.conf":
+      source => "puppet:///modules/apache2/tika.conf",
+      owner => root,
+      group => root,
+      notify => Service["apache2"],
+      require => Package["apache2"];
 	}
 }
 
