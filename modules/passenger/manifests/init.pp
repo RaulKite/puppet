@@ -1,6 +1,6 @@
 class passenger {
   exec {
-    "/usr/local/bin/gem install passenger -v=3.0.11":
+    "/usr/local/rvm/bin/gem install passenger -v=3.0.11":
       user    =>  root,
       group   =>  root,
       alias   =>  "install_passenger",
@@ -9,7 +9,7 @@ class passenger {
   }
 
   exec {
-    "/usr/local/bin/passenger-install-apache2-module --auto":
+    "/usr/local/rvm/bin ruby /usr/local/rvm/gems/ruby-1.9.2-p320/gems/passenger-3.0.11/bin/passenger-install-apache2-module --auto":
       user    =>  root,
       group   =>  root,
       path    =>  "/bin:/usr/bin:/usr/local/apache2/bin/",
