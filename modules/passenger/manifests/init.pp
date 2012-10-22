@@ -1,4 +1,13 @@
-class passenger {
+class passenger {  
+
+  package {
+    ["apache2-prefork-dev", "libcurl4-openssl-dev", "libapr1-dev", "libaprutil1-dev"]:
+    ensure => installed,
+    before => Exec["/usr/local/rvm/bin/gem install passenger -v=3.0.11"]
+  }
+
+
+
   exec {
     "/usr/local/rvm/bin/gem install passenger -v=3.0.11":
       user    =>  root,
