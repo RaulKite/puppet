@@ -1,4 +1,4 @@
-class tika {
+class bambi {
   file {
     ["/home/www/", "/home/www/bambi/", "/home/www/bambi/shared/", "/home/www/bambi/shared/config/"]:
       ensure  =>  directory,
