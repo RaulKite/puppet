@@ -21,6 +21,18 @@ class tika {
       provider => gem
   }
 
+  exec {
+    "mysql_password":
+      unless => "mysqladmin -uroot -proot status",
+      command => "mysqladmin -uroot password root",
+      require => Service[mysql];
+    "tika_db":
+      unless => "mysql -uroot -proot tika_production",
+      command => "mysql -uroot -proot -e 'create database tika_production'",
+      require => Exec["mysql_password"]
+  }
+
+
 }
 
 
