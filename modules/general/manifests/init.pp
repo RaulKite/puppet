@@ -13,6 +13,10 @@ class general {
                ensure => present
          }
 
+	package { "libxml2-dev":
+		ensure => present
+	}
+
 	package { "ntp":
 		ensure => "purged"
 	}
