@@ -21,6 +21,10 @@ class general {
 		ensure => present
 	}
 
+	package {"libmysqlclient-dev":
+		ensure => present
+	}
+
 	package { "ntp":
 		ensure => "purged"
 	}
