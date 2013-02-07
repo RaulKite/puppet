@@ -17,6 +17,10 @@ class general {
 		ensure => present
 	}
 
+	package {"libxslt1-dev":
+		ensure => present
+	}
+
 	package { "ntp":
 		ensure => "purged"
 	}
