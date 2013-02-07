@@ -4,6 +4,15 @@ class general {
 		ensure => present
 	}
 
+	package {
+		"curl":
+		ensure => present
+	}
+
+	package { "build-essential":
+               ensure => present
+         }
+
 	package { "ntp":
 		ensure => "purged"
 	}
