@@ -1,6 +1,6 @@
 class bambi_app {
   file {
-    ["/home/www/", "/home/www/bambi/", "/home/www/bambi/shared/", "/home/www/bambi/shared/config/"]:
+    ["/home/www/", "/home/www/bambi/", "/home/www/bambi/shared/", "/home/www/bambi/shared/config/", "/home/www/bambi/shared/config/initializers"]:
       ensure  =>  directory,
       owner   =>  vagrant,
       group   =>  vagrant,
@@ -15,11 +15,22 @@ class bambi_app {
       mode    =>  600,
       source  =>  "puppet:///modules/bambi_app/database.yml"     
   } 
+
+
+  file {
+    "/home/www/bambi/shared/config/initializers/devise.rb":
+      ensure  =>  present, 
+      owner   =>  vagrant,
+      group   =>  vagrant,
+      mode    =>  600,
+      source  =>  "puppet:///modules/bambi_app/devise.rb"     
+  } 
+
   
-  package {
-    "bundler":
-      provider => gem
-  }
+#  package {
+#    "bundler":
+#      provider => gem
+#  }
 
   exec {
     "mysql_password":
